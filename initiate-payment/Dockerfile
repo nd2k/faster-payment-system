@@ -6,7 +6,7 @@ WORKDIR /app
 COPY pom.xml .
 COPY library library
 COPY initiate-payment/pom.xml initiate-payment/pom.xml
-COPY src src
+COPY initiate-payment/src initiate-payment/src
 
 # Construire uniquement le module initiate-payment (et ses dépendances)
 RUN mvn clean package -pl initiate-payment -am -DskipTests

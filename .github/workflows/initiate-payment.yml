@@ -28,10 +28,11 @@ jobs:
         with:
           maven-version: 3.8.2
 
-      - name: List files in root directory
+      - name: List files in initiate-payment directory
         run: |
-          echo "Listing files in the root directory:"
-          ls -R
+          echo "Listing files in the initiate-payment directory:"
+          ls -R initiate-payment
+      
 
       - name: Build all modules
         run: mvn clean package -pl library,initiate-payment -am

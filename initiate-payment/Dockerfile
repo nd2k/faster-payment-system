@@ -2,11 +2,11 @@
 FROM maven:3.9.6-eclipse-temurin-21 AS builder
 WORKDIR /app
 
-# Copier uniquement le module initiate-payment et la config parent
-COPY ../pom.xml ./pom.xml
-COPY ../library ./library
-COPY ./pom.xml ./initiate-payment/pom.xml
-COPY ./src ./initiate-payment/src
+# Copier le pom.xml principal et les modules nécessaires
+COPY pom.xml .
+COPY library library
+COPY initiate-payment/pom.xml initiate-payment/pom.xml
+COPY src src
 
 # Construire uniquement le module initiate-payment (et ses dépendances)
 RUN mvn clean package -pl initiate-payment -am -DskipTests

@@ -1,4 +1,4 @@
-package com.nd2k.library.initiatePayment;
+package com.nd2k.initiatepayment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

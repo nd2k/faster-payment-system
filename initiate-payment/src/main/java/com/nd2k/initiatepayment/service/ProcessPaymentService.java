@@ -1,4 +1,4 @@
-package com.nd2k.library.initiatePayment.service;
+package com.nd2k.initiatepayment.service;
 
 import com.nd2k.library.model.common.InitiatePaymentResponse;
 import org.slf4j.Logger;

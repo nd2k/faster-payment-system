@@ -1,6 +1,6 @@
-package com.nd2k.library.initiatePayment.controller;
+package com.nd2k.initiatepayment.controller;
 
-import com.nd2k.library.initiatePayment.service.ProcessPaymentService;
+import com.nd2k.initiatepayment.service.ProcessPaymentService;
 import com.nd2k.library.model.common.InitiatePaymentResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -2,19 +2,21 @@
 FROM maven:3.9.6-eclipse-temurin-21 AS builder
 WORKDIR /app
 
-# Copier les fichiers nécessaires
-COPY pom.xml ./
-COPY src ./src
+# Copier uniquement le module initiate-payment et la config parent
+COPY ../pom.xml ./pom.xml
+COPY ../library ./library
+COPY ./pom.xml ./initiate-payment/pom.xml
+COPY ./src ./initiate-payment/src
 
-# Construire l'application
-RUN mvn clean package -DskipTests
+# Construire uniquement le module initiate-payment (et ses dépendances)
+RUN mvn clean package -pl initiate-payment -am -DskipTests
 
 # Étape 2 : Exécution de l'application avec une image légère
 FROM eclipse-temurin:21-jre
 WORKDIR /app
 
 # Copier le JAR depuis l'étape de build
-COPY --from=builder /app/target/initiate-payment-*.jar app.jar
+COPY --from=builder /app/initiate-payment/target/initiate-payment-*.jar app.jar
 
 # Exposer le port
 EXPOSE 8080

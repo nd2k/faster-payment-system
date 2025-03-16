@@ -22,6 +22,10 @@
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
     <dependency>
@@ -43,11 +47,14 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
         <configuration>
-          <mainClass>com.nd2k.initiatepayment.InitiatePaymentApplication</mainClass>
-          <layout>JAR</layout>
+          <archive>
+            <manifestEntries>
+              <Main-Class>org.springframework.boot.loader.JarLauncher</Main-Class>
+            </manifestEntries>
+          </archive>
         </configuration>
       </plugin>
     </plugins>

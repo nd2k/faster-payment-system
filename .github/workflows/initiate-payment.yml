@@ -32,7 +32,6 @@ jobs:
         run: |
           echo "Listing files in the initiate-payment directory:"
           ls -R initiate-payment
-      
 
       - name: Build all modules
         run: mvn clean package -pl library,initiate-payment -am

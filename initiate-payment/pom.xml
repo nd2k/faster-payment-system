@@ -49,6 +49,10 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>org.springframework.boot.loader.JarLauncher</mainClass>
+          <layout>JAR</layout>
+        </configuration>
         <executions>
           <execution>
             <goals>
@@ -56,14 +60,6 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <configuration>
-          <mainClass>org.springframework.boot.loader.JarLauncher</mainClass>
-          <layout>JAR</layout>
-        </configuration>
       </plugin>
     </plugins>
   </build>

@@ -23,4 +23,4 @@ COPY initiate-payment/target/initiate-payment-1.0-SNAPSHOT.jar app/initiate-paym
 EXPOSE 8080
 
 # Lancer l'application
-ENTRYPOINT ["java", "-jar", "initiate-payment.jar"]
+ENTRYPOINT ["java", "-jar", "/app/initiate-payment.jar"]

@@ -2,6 +2,8 @@
 FROM maven:3.9.6-eclipse-temurin-21 AS builder
 WORKDIR /app
 COPY pom.xml .
+COPY /library/pom.xml ./library/pom.xml
+COPY /initiate-payment/pom.xml ./initiate-payment/pom.xml
 RUN mvn dependency:go-offline
 COPY /initiate-payment/src/ ./src/
 RUN mvn clean package -DskipTests=true

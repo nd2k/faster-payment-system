@@ -22,4 +22,4 @@ WORKDIR /app
 EXPOSE 8080
 
 # Lancer l'application
-ENTRYPOINT ["java", "-jar", "/app/initiate-payment/target/initiate-payment-1.0.jar"]
+ENTRYPOINT ["java", "-jar", "/app/target/initiate-payment-1.0.jar"]

@@ -10,7 +10,7 @@ RUN mvn clean package -DskipTests=true
 
 FROM eclipse-temurin:21
 RUN mkdir /app
-COPY --from=builder /app/target/initiate-payment-1.0-SNAPSHOT.jar /app/initiate-payment.jar
+COPY --from=builder /app/target/*.jar /app/initiate-payment.jar
 ENV SERVER_PORT=8080
 WORKDIR /app
 EXPOSE 8080

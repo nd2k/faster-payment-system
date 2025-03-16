@@ -16,10 +16,10 @@ FROM eclipse-temurin:21-jre
 WORKDIR /app
 
 # Copier le JAR depuis l'étape de build
-COPY --from=builder /app/initiate-payment/target/initiate-payment-*.jar app.jar
+COPY --from=builder /app/target/initiate-payment-*.jar app.jar
 
 # Exposer le port
 EXPOSE 8080
 
 # Lancer l'application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/target/initiate-payment-*.jar"]

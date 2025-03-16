@@ -3,5 +3,3 @@
 ## Description
 
 ## Business Context
-
-## Technical Context

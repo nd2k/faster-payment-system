@@ -14,7 +14,7 @@ COPY --from=builder /app/initiate-payment/target/*.jar /app/initiate-payment.jar
 ENV SERVER_PORT=8080
 WORKDIR /app
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/initiate-payment.jar"]
+ENTRYPOINT ["java", "-jar", "initiate-payment.jar"]
 
 
 # Copier le pom.xml principal et les modules nécessaires
